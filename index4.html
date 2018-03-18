@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objects in JS</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+	/*var hotel = {
+		  name: 'Park', 
+		  rooms: 40, 
+		  booked: 25,
+		  checkAvailability: function(){
+		    return this.rooms - this.booked;
+		  }
+		}
+		document.write ( "Hotel name is "+ hotel.name + "<br/>");
+		document.write ( "Rooms available: " + hotel.checkAvailability()+ "<br/>");
+		hotel.name = "New Park";
+		document.write ( "Hotel's new name is " + hotel.name);*/
+
+		//>>>>>>>>>>>>Constructor is like a blueprint>>>>>>>>>>>>
+
+		/*function Hotel (name, rooms, booked) {
+			this.name = name;
+			this.rooms = rooms;
+			this.booked = booked;
+			this.checkAvailability = function(){
+				return this.rooms - this.booked;
+			}
+		}
+
+		var parkHotel = new Hotel("Park", 40, 25);
+		var newParkHotel = new Hotel ("New Park Hotel", 35, 12);
+
+		parkHotel.gym = true;
+
+		document.write("Name of hotel is " + parkHotel.name);
+		document.write(parkHotel.gym);
+		document.write(parkHotel); */
+
+
+		var book = {
+			title: "Adventures of Sherlock Holmes",
+			author: "Artur Conan Doyle",
+			pages: 632,
+			read: function(){
+			  	return ++pages;
+			},
+			
+			buy: function(){
+				document.write(book.title + " , by " + book.author + " has been purchased!" + "<br/>")
+			}
+
+		}
+
+		book.buy();
+		
+		
+
+      //>>>>>>>>>>>CONSTRUCTOR>>>>>>
+
+		function Book (title, author, pages) {
+			this.title = title;
+			this.author = author;
+			this.pages = pages;
+			this.read1 = function(){
+				return ++pages;
+			};
+			this.buy1 = function(){
+				document.write(this.title + " , by " + this.author + " has been purchased! " + "<br/>")
+			}
+		}
+
+		var newBook = new Book("Adventures of Sherlock Holmes", "Artur Conan Doyle", 631);
+		newBook.buy1();		
+		document.write(newBook.read1() + "<br/>");
+
+		var nextBook = new Book("Hello", "Myself", 2323);
+		nextBook.buy1();
+		document.write(nextBook.read1()+ "<br/>");
+
+
+
+
+
+	</script>
+
+</body>
+</html>
